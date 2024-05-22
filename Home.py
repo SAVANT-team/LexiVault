@@ -45,7 +45,7 @@ st.write("---")
 
 col3, col4 = st.columns([1,4], gap="small")
 with col3:
-	savant_logo = Image.open('savant-logo.png')
+	savant_logo = Image.open('img/savant-logo.png')
 	st.image(savant_logo, caption=None, width=200)
 
 with col4:
