@@ -9,7 +9,7 @@ Existing resources fall short of fully satisfying desired requirements for:
 - Broad language support for psycholinguistic research 
 - Minimizing resource building efforts
 
-**Current goal:** build and collect resources that are structured for psycholinguistic inquiry of lesser-studied languages
+**Callout:** **Current goal:** build and collect resources that are structured for psycholinguistic inquiry of lesser-studied languages
 As we compiled the list of word features to be generated for each corpus, given the eventual goal of wide linguistic diversity and the presence of language-specific attributes such as root-and-pattern morphology, we wanted to establish a baseline structure for language lexicons with the minimum required components to be viably useful in a psycholinguistic study. This would allow for wider accommodation when onboarding severely resource-poor languages beyond the ones planned for this particular project. As is often the case with low-resource languages, reliable annotation tools may not be available to produce a richer set of features. 
 So we set up a baseline process and structure to follow as we build each of the language resources on our docket and beyond for eventual contributors to keep enriching LexiVault while still following a set of guidelines to keep the data relevant for psycholinguistic research, namely:
 - A sufficiently representative corpus in size and content to support significance of findings, and specific measures typically used in psycholinguistic studies, such as normalized frequencies, transition probabilities, and grapheme-to-phoneme transcription which typically doesn’t co-occur with morphological or lexical annotation in a same resource 
