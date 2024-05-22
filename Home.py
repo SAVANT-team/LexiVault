@@ -33,11 +33,7 @@ with col2:
 		"""
 		**LexiVAULT** is a collection of morphologically parsed Lexical Stimulus Databases for low-or-no resource languages 
 		modeled after similar resources that have facilitated research on well-studied languages such as English and Dutch 
-		(eg. the CELEX database, Baayen et al. 1995, and the English Lexicon Project, Balota et al. 2007).\\
-		\\
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in lectus quam. Aliquam tempus enim in odio elementum semper. 
-		Suspendisse ut elementum turpis, sed eleifend lectus. Phasellus dapibus egestas neque, id fermentum nunc. In eu tortor leo. 
-		Nulla ornare sit amet odio vitae molestie. Cras tincidunt mi purus, in convallis nulla scelerisque a. Duis vel ante sagittis lectus mollis aliquet et sit amet mi.
+		(eg. the CELEX database, Baayen et al. 1995, and the English Lexicon Project, Balota et al. 2007).		
 		"""
 	)
 
@@ -54,13 +50,6 @@ with col4:
 		The development of this tool falls within a wider research context studying the **S**ystematicity **a**nd **V**ariation 
 		in Word Structure Processing Across Languages through **a** **N**euro-**T**ypology Approach, 
 		a.k.a. The [SAVANT](https://savant.qmul.ac.uk/) Project.\\
-		\\
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in lectus quam. Aliquam tempus enim in odio elementum semper. 
-		Suspendisse ut elementum turpis, sed eleifend lectus. Phasellus dapibus egestas neque, id fermentum nunc. In eu tortor leo.
-		Nulla ornare sit amet odio vitae molestie. Cras tincidunt mi purus, in convallis nulla scelerisque a. Duis vel ante sagittis lectus mollis aliquet et sit amet mi.\\
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in lectus quam. Aliquam tempus enim in odio elementum semper. 
-		Suspendisse ut elementum turpis, sed eleifend lectus. Phasellus dapibus egestas neque, id fermentum nunc. In eu tortor leo.
-		Nulla ornare sit amet odio vitae molestie. Cras tincidunt mi purus, in convallis nulla scelerisque a. Duis vel ante sagittis lectus mollis aliquet et sit amet mi.
 		"""
 	)
 
@@ -70,8 +59,7 @@ with st.expander(label="**CONTACT US**", expanded=True):
 	st.markdown(
 		"""
 		This is placeholder area for contact e-mails in the long run \\
-		- For general inquiries, contact J. Doe at [so-and-so@address.com](https://www.google.com)
-		- To contribute to the databases, contact S. Smith this person at [add-more@data.com](https://www.google.com)
-		- To report issues, contact J.S. Shmoe at [dont-know@dontcare.com](https://www.google.com)
+		- For general inquiries, contact us at [so-and-so@address.com](https://www.google.com)
+		- To contribute to the repository, get in touch with us through [add-more@data.com](https://www.google.com)
 		"""
 		)
