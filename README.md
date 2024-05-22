@@ -1,5 +1,5 @@
 # Welcome to LexiVault
-This is a repository and web-tool for psycholinguistic lexicons of lesser-studied languages. You can access the web application directly via [this link](https://lexivault.streamlit.app). 
+Lexivault is a repository and [**web-tool**](https://lexivault.streamlit.app) for psycholinguistic lexicons of lesser-studied languages.  
 The development of this tool falls within a wider research context studying the **S**ystematicity **a**nd **V**ariation in Word Structure Processing **A**cross Languages through a **N**euro-**T**ypology Approach, a.k.a. The [SAVANT](https://savant.qmul.ac.uk/) Project.
 
 ## About
