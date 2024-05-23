@@ -181,15 +181,25 @@ def runSubmit():
 # INTERFACE : SEARCH FORM
 # ===========================================================
 
-with st.expander(label="**PLACEHOLDER HEADER FOR THE PAGE HOW-TO**", expanded=True):
+with st.expander(label="**ABOUT: Modern Standard Arabic Lexicon**", expanded=True):
 	st.markdown(
 		"""
-		This is placeholder text for the explanation guiding users through the search tool below.
-		One can insert some emojis 👈 and **Play** with the text for some **_really_** cool effects. \\
-		What else can we do?
-		- We can have bullet points and hyperlinked text like so [streamlit.io](https://streamlit.io)
-		- Manipulate font a bit more like this text in :red[colored red], and this in **:blue[colored]** and bold.
-		- Check out more neat things in the [community forums](https://discuss.streamlit.io)
+    		This lexicon was constructed from a 📚 618M word corpus Dunn & Adams (2020)  
+      		Search Parameters:  
+		🔠  **word** **:blue[=]** the wordform, in Buckwalter transliteration  
+		🔠  **word_ar** **:blue[=]** the wordform  
+		🔢  **freq_word** **:blue[=]** ppm frequency of the wordform  
+		🔠  **lemma** **:blue[=]** the lemma, in Buckwalter transliteration  
+		🔠  **lemma_ar** **:blue[=]** the lemma  
+		🔢  **freq_lem** **:blue[=]** raw (or is it ppm..?) frequency of the lemma  
+		🔠  **pos** **:blue[=]** Part of Speech  
+		🔠  **gloss** **:blue[=]** English gloss  
+		🔠  **root** **:blue[=]** the root, in Buckwalter transliteration  
+		🔠  **root_ar** **:blue[=]** the root  
+		🔢  **freq_root** **:blue[=]** raw (or is it ppm..?) frequency of the root  
+		🔠  **pattern** **:blue[=]** the pattern, in Buckwalter transliteration  
+		🔠  **pattern_ar** **:blue[=]** the pattern  
+		🔢  **freq_ptrn** **:blue[=]** raw (or is it ppm..?) frequency of the pattern  
 		"""
 		)
 
