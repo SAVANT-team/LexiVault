@@ -185,10 +185,19 @@ def runSubmit():
 # INTERFACE : SEARCH FORM
 # ===========================================================
 
-with st.expander(label="**PLACEHOLDER HEADER FOR THE PAGE HOW-TO**", expanded=True):
+with st.expander(label="**HOW TO Add a New Language**", expanded=True):
 	st.markdown(
 		"""
-		This is placeholder text for the explanation guiding users through the search tool below.
+		To contribute a lexical database to LexiVault, you should start with:  
+
+    		✅  A minimum 16M word content-corpus, following Brysbaert & New (2009)  
+      		
+      		Generate a dataset for Lexivault with:
+      		✅  A minimum 16M word content-corpus, following Brysbaert & New (2009)
+		✅  A minimum 16M word content-corpus, following Brysbaert & New (2009)
+  		✅  A minimum 16M word content-corpus, following Brysbaert & New (2009)
+    		✅  A minimum 16M word content-corpus, following Brysbaert & New (2009)
+      
 		One can insert some emojis 👈 and **Play** with the text for some **_really_** cool effects. \\
 		What else can we do?
 		- We can have bullet points and hyperlinked text like so [streamlit.io](https://streamlit.io)
