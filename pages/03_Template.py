@@ -189,7 +189,6 @@ with st.expander(label="**HOW TO Add a New Language**", expanded=True):
 	st.markdown(
 		"""
 		To contribute a lexical database to LexiVault, you should start with:  
-
     		✅  A minimum 16M word content-corpus, following Brysbaert & New (2009)  
       		
       		Generate a dataset for Lexivault with:
