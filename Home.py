@@ -25,7 +25,7 @@ col1, col2 = st.columns(2)
 
 with col1:
 	
-	lexivault_logo = Image.open('lexivault-logo.png')
+	lexivault_logo = Image.open('img/lexivault-logo.png')
 	st.image(lexivault_logo, caption=None, width=400)
 
 with col2:
