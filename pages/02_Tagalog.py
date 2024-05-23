@@ -179,15 +179,18 @@ def runSubmit():
 # INTERFACE : SEARCH FORM
 # ===========================================================
 
-with st.expander(label="**PLACEHOLDER HEADER FOR THE PAGE HOW-TO**", expanded=True):
+with st.expander(label="**ABOUT: Tagalog Dataser**", expanded=True):
 	st.markdown(
 		"""
-		This is placeholder text for the explanation guiding users through the search tool below.
-		One can insert some emojis 👈 and **Play** with the text for some **_really_** cool effects. \\
-		What else can we do?
-		- We can have bullet points and hyperlinked text like so [streamlit.io](https://streamlit.io)
-		- Manipulate font a bit more like this text in :red[colored red], and this in **:blue[colored]** and bold.
-		- Check out more neat things in the [community forums](https://discuss.streamlit.io)
+  		This lexicon was constructed from a 257M word corpus consisting of the following:  
+    		📚  Web & Newswire (Zuraw, 2007; Cruz & Cheng, 2021)  
+      		📚  Wikipedia (Wray 2022)  
+      		Search Parameters:  
+      		🔠  **word** = the wordform  
+		🔢  **wordfreq** = raw (or is it ppm..?) frequency of the wordform  
+  		🔠  **stem** = the stem, extracted by in-house rule-based stemmer  
+    		🔢  **stemfreq** = raw/ppm frequency of the stem  
+      		🔢  **TP** = stem:whole word transition probability
 		"""
 		)
 
