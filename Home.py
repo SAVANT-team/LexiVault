@@ -41,18 +41,9 @@ with col3:
 	st.image(savant_logo, caption=None, width=200)
 
 with col4:
-	st.markdown(
-		"""
-		The development of this tool falls within a wider research context studying the **S**ystematicity **a**nd **V**ariation 
-		in Word Structure Processing Across Languages through **a** **N**euro-**T**ypology Approach, 
-		a.k.a. The [SAVANT](https://savant.qmul.ac.uk/) Project.  
-  
-		This project's goals are to leverage the diversity of the  languages of the world-- with respect to their morphological structure, 
-		phonological transparency, sublexical syntactic operations, and writing systems-- to investigate how language is stored and processed in the mind and brain.  
-  		
-    		Support for development of LexiVault is gratefully acknowledged through the United Kingdom Economic and Social Research Council (ESRC) ES/V000012/1 
-		"""
-	)
+	st.markdown("The development of this tool falls within a wider research context studying the **S**ystematicity **a**nd **V**ariation in Word Structure Processing Across Languages through **a** **N**euro-**T**ypology Approach, a.k.a. The [SAVANT](https://savant.qmul.ac.uk/) Project.")
+	st.markdown("This project's goals are to leverage the diversity of the  languages of the world-- with respect to their morphological structure, phonological transparency, sublexical syntactic operations, and writing systems-- to investigate how language is stored and processed in the mind and brain.")
+	st.markdown("Support for development of LexiVault is gratefully acknowledged through the United Kingdom Economic and Social Research Council (ESRC) ES/V000012/1")
 
 st.write("---")
 
