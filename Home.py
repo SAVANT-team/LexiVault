@@ -29,19 +29,9 @@ with col1:
 	st.image(lexivault_logo, caption=None, width=400)
 
 with col2:
-	st.markdown(
-		"""
-		**LexiVAULT**   LexiVault is a collection of morphologically parsed Lexical Stimulus Databases for low-or-no resource languages 
-		modeled after similar resources that have facilitated research on well-studied languages such as English and Dutch (eg. the CELEX database, Baayen et al. 1995, 
-		and the English Lexicon Project, Balota et al. 2007).  
-  		
-  		This project is designed to support stimuli creation for psycholinguistic experiments with single word-based paradigms. 
-  		The data within is thus focused on lexical and sublexical statistics, including morpheme frequency and phonotactic probability.  
-  		
-  		LexiVault is a work in progress. Currently we are developing lexicons for Bangla, Slovenian, Bosnian-Serbio-Crotian, and different dialects of Arabic. 
-  		Check out the template page and contact us if you are interested in joining LexiVault and contributing your language lexicons!
-		"""
-	)
+	st.markdown("**LexiVAULT** is a collection of morphologically parsed Lexical Stimulus Databases for low-or-no resource languages modeled after similar resources that have facilitated research on well-studied languages such as English and Dutch (eg. the CELEX database, Baayen et al. 1995, and the English Lexicon Project, Balota et al. 2007).")
+	st.markdown("This project is designed to support stimuli creation for psycholinguistic experiments with single word-based paradigms. The data within is thus focused on lexical and sublexical statistics, including morpheme frequency and phonotactic probability.")
+	st.markdown("LexiVault is a work in progress. Currently we are developing lexicons for Bangla, Slovenian, Bosnian-Serbio-Crotian, and different dialects of Arabic. Check out the template page and contact us if you are interested in joining LexiVault and contributing your language lexicons!")
 
 st.write("---")
 
