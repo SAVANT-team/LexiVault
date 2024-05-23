@@ -179,7 +179,7 @@ def runSubmit():
 # INTERFACE : SEARCH FORM
 # ===========================================================
 
-with st.expander(label="**ABOUT: Tagalog Dataser**", expanded=True):
+with st.expander(label="**ABOUT: Tagalog Lexicon**", expanded=True):
 	st.markdown(
 		"""
   		This lexicon was constructed from a 257M word corpus consisting of the following:  
