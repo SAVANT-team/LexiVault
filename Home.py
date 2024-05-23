@@ -67,10 +67,10 @@ with col4:
 st.write("---")
 
 with st.expander(label="**CONTACT US**", expanded=True):
-	st.info('For general inquiries or contributions to the repository, get in touch with us through nyuad.savant@nyu.edu',icon="✉️")
-	st.markdown(
-		"""
-		- For general inquiries or contributions to the repository, get in touch with us through nyuad.savant@nyu.edu
-		- To naviga the repository, get in touch with us through nyuad.savant@nyu.edu
-		"""
-		)
+	st.info('  For general inquiries or contributions to the repository, get in touch with us through the project [GitHub Page](https://github.com/SAVANT-team/LexiVault)',icon="✉️")
+	#st.markdown(
+	#	"""
+	#	- For general inquiries or contributions to the repository, get in touch with us through nyuad.savant@nyu.edu
+	#	- To naviga the repository, get in touch with us through nyuad.savant@nyu.edu
+	#	"""
+	#	)
