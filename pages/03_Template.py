@@ -185,7 +185,7 @@ def runSubmit():
 # INTERFACE : SEARCH FORM
 # ===========================================================
 
-with st.expander(label="**HOW TO Add a New Language**", expanded=True):
+with st.expander(label="**How to Add a New Language**", expanded=True):
 	st.markdown(
 		"""
 		To contribute a lexical database to LexiVault, you should start with:  
