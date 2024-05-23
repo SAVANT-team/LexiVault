@@ -1,4 +1,5 @@
 # Welcome to [LexiVault](https://lexivault.streamlit.app)
+[!LOGO](img/lexivault-logo.png)  
 Lexivault is a repository and [**web-tool**](https://lexivault.streamlit.app) for psycholinguistic lexicons of lesser-studied languages.  
 The development of this tool falls within a wider research context studying the **S**ystematicity **a**nd **V**ariation in Word Structure Processing **A**cross Languages through a **N**euro-**T**ypology Approach, a.k.a. The [SAVANT](https://savant.qmul.ac.uk/) Project.
 
