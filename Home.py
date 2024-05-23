@@ -67,7 +67,7 @@ with col4:
 st.write("---")
 
 with st.expander(label="**CONTACT US**", expanded=True):
-	st.info('For general inquiries or contributions to the repository, get in touch with us through nyuad.savant@nyu.edu',icon=":materials/contact-mail:")
+	st.info('For general inquiries or contributions to the repository, get in touch with us through nyuad.savant@nyu.edu',icon="✉️")
 	st.markdown(
 		"""
 		- For general inquiries or contributions to the repository, get in touch with us through nyuad.savant@nyu.edu
