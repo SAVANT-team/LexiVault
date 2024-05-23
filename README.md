@@ -20,7 +20,10 @@ If you find LexiVault useful in your research, please cite [this paper](https://
 ```bibtex
 @inproceedings{saddiki-etal-2024-lexivault,
 	title        = {LexiVault: A repository for psycholinguistic lexicons of lesser-studied languages},
-	author       = {Saddiki, Hind  and Wray, Samantha  and Li, Daisy},
+	author       = {Saddiki, Hind and 
+			Wray, Samantha and 
+			Li, Daisy
+			},
 	year         = 2024,
 	month        = may,
 	booktitle    = {Proceedings of the 14th Language Resources and Evaluation Conference},
