@@ -186,11 +186,11 @@ with st.expander(label="**ABOUT: Tagalog Dataser**", expanded=True):
     		📚  Web & Newswire (Zuraw, 2007; Cruz & Cheng, 2021)  
       		📚  Wikipedia (Wray 2022)  
       		Search Parameters:  
-      		🔠  **word** = the wordform  
-		🔢  **wordfreq** = raw (or is it ppm..?) frequency of the wordform  
-  		🔠  **stem** = the stem, extracted by in-house rule-based stemmer  
-    		🔢  **stemfreq** = raw/ppm frequency of the stem  
-      		🔢  **TP** = stem:whole word transition probability
+      		🔠  **word** **:blue[=]** the wordform  
+		🔢  **wordfreq** **:blue[=]** raw frequency of the wordform  
+  		🔠  **stem** **:blue[=]** the stem, extracted by in-house rule-based stemmer  
+    		🔢  **stemfreq** **:blue[=]** raw frequency of the stem  
+      		🔢  **TP** **:blue[=]** stem:whole word transition probability
 		"""
 		)
 
