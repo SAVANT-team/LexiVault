@@ -26,7 +26,7 @@ col1, col2 = st.columns([1,2], gap="small")
 with col1:
 	
 	lexivault_logo = Image.open('img/lexivault-logo.png')
-	st.image(lexivault_logo, caption=None, width=400)
+	st.image(lexivault_logo, caption=None, width=300)
 
 with col2:
 	st.markdown("**LexiVAULT** is a collection of morphologically parsed Lexical Stimulus Databases for low-or-no resource languages modeled after similar resources that have facilitated research on well-studied languages such as English and Dutch (eg. the CELEX database, Baayen et al. 1995, and the English Lexicon Project, Balota et al. 2007).")
