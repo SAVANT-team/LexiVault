@@ -21,7 +21,7 @@ st.markdown(
 
 st.header("Welcome to LexiVAULT! :book:")
 
-col1, col2 = st.columns([1,3], gap="small")
+col1, col2 = st.columns([1,2], gap="small")
 
 with col1:
 	
