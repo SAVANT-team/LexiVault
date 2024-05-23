@@ -191,15 +191,15 @@ with st.expander(label="**ABOUT: Modern Standard Arabic Lexicon**", expanded=Tru
 		🔢  **freq_word** **:blue[=]** ppm frequency of the wordform  
 		🔠  **lemma** **:blue[=]** the lemma, in Buckwalter transliteration  
 		🔠  **lemma_ar** **:blue[=]** the lemma  
-		🔢  **freq_lem** **:blue[=]** raw (or is it ppm..?) frequency of the lemma  
+		🔢  **freq_lem** **:blue[=]** ppm frequency of the lemma  
 		🔠  **pos** **:blue[=]** Part of Speech  
 		🔠  **gloss** **:blue[=]** English gloss  
 		🔠  **root** **:blue[=]** the root, in Buckwalter transliteration  
 		🔠  **root_ar** **:blue[=]** the root  
-		🔢  **freq_root** **:blue[=]** raw (or is it ppm..?) frequency of the root  
+		🔢  **freq_root** **:blue[=]** ppm frequency of the root  
 		🔠  **pattern** **:blue[=]** the pattern, in Buckwalter transliteration  
 		🔠  **pattern_ar** **:blue[=]** the pattern  
-		🔢  **freq_ptrn** **:blue[=]** raw (or is it ppm..?) frequency of the pattern  
+		🔢  **freq_ptrn** **:blue[=]** ppm frequency of the pattern  
 		"""
 		)
 
