@@ -60,7 +60,7 @@ def mapSearchModeToColumn(smode):
 # ==================================================================
 @st.cache_data(experimental_allow_widgets=True)
 def load_lexicon():
-	fpath = os.path.join(os.path.join(os.getcwd(),'lexivault_db'),'tagalog_streamlit.csv')
+	fpath = os.path.join(os.path.join(os.getcwd(),'lexivault_db'),'tagalog_sample.csv')
 	dflx = pd.read_csv(fpath,sep='\t',encoding='utf-8',low_memory=False)
 	dflx = dflx.fillna('')
 	#return dflx.drop(columns=temp_drop_cols)
