@@ -32,11 +32,6 @@ st.markdown(
 # UTILS
 # ==================================================================
 
-def ARtoBW(text):
-	ar2bw = CharMapper.builtin_mapper('ar2bw')
-	as_bw = ar2bw(text)
-	return as_bw
-
 def cleanLemmas(text):
 	if '_' in text:
 		return text[:-2]
@@ -67,7 +62,7 @@ def mapSearchModeToColumn(smode):
 def load_lexicon():
 	fpath = os.path.join(os.path.join(os.getcwd(),'lexivault_db'),'tagalog_streamlit.csv')
 	dflx = pd.read_csv(fpath,sep='\t',encoding='utf-8',low_memory=False)
-	dflx = dflx.fillna(0)
+	dflx = dflx.fillna('')
 	#return dflx.drop(columns=temp_drop_cols)
 	return dflx
 
