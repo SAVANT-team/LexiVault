@@ -65,7 +65,7 @@ def mapSearchModeToColumn(smode):
 # ==================================================================
 @st.cache_data(experimental_allow_widgets=True)
 def load_lexicon():
-	fpath = os.path.join(os.path.join(os.getcwd(),'lexivault_db'),'tagalog_streamlit.csv') # MSA_formatted.csv
+	fpath = os.path.join(os.path.join(os.getcwd(),'lexivault_db'),'tagalog_streamlit.csv')
 	dflx = pd.read_csv(fpath,sep='\t',encoding='utf-8',low_memory=False)
 	dflx = dflx.fillna(0)
 	#return dflx.drop(columns=temp_drop_cols)
@@ -98,9 +98,11 @@ def getResults(keyword, searchmode, postags, exactMatch):
 	searchCol = searchmode
 
 	if exactMatch:
-		results = df_lex.query("{0} == @keyword_".format(searchCol))
+		#results = df_lex.query("{0} == @keyword_".format(searchCol))
+		results = df_lex.query("{0} == @keyword_ & pos == @pos_filter".format(searchCol))
 	else:
-		results = df_lex.query("{0}.str.contains(@keyword_)".format(searchCol))
+		#results = df_lex.query("{0}.str.contains(@keyword_,na=False)".format(searchCol))
+		results = df_lex.query("{0}.str.contains(@keyword_,na=False) & pos == @pos_filter".format(searchCol))
 
 	return results #pd.DataFrame()
 
