@@ -188,7 +188,7 @@ with st.expander(label="**ABOUT: Tagalog Lexicon**", expanded=True):
 		🔢  **wordfreq** **:blue[=]** raw frequency of the wordform  
   		🔠  **stem** **:blue[=]** the stem, extracted by in-house rule-based stemmer  
     		🔢  **stemfreq** **:blue[=]** raw frequency of the stem  
-      		🔢  **TP** **:blue[=]** stem:whole word transition probability
+      		🔢  **TP** **:blue[=]** whole word transition probability
 		"""
 		)
 
@@ -206,8 +206,9 @@ with expander_:
 		input_f = st.file_uploader(label='Upload SearchKey File (one per line)',key='input_file_tagalog',help='multiple entry search',accept_multiple_files=False, type=['.txt','.csv'])
 		#file_ = st.file_uploader(label='',key='input_file',accept_multiple_files=False, type=['.xlsx','.xls','.csv','.txt'])
 	with col2:
-		strictSearch = st.checkbox(label='Only show _**EXACT**_ matches', value=False, key='strict_search',help='check the box for an exact keyword match, leave it unchecked for any results close to your keyword')
 		searchMode = st.selectbox(label='Search By',options=['Word (e.g. ihahalo)','Stem (e.g. halo)'])
+		strictSearch = st.checkbox(label='Only show _**EXACT**_ matches', value=False, key='strict_search',help='check the box for an exact keyword match, leave it unchecked for any results close to your keyword')
+		
 		
 		#pos_ = st.multiselect(
 		#	label='Filter by Part-of-Speech (POS):',
