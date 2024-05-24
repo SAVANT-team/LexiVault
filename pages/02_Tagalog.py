@@ -128,7 +128,7 @@ def runSubmit():
 		#	pos_choices = df_lex['pos'].unique().tolist()
 		
 
-		#st.write('keyword(s) = ' + input_wrd)
+		st.write('keyword(s) = ' + input_wrd)
 		#st.write('search_by_value = ' + search_col_name)
 		#st.write('POS selection:', pos_choices)
 		#input_wrd = input_list[0]
