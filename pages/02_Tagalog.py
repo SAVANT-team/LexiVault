@@ -40,7 +40,7 @@ def cleanLemmas(text):
 
 def ppMillion(text):
 	raw_freq = float(text)
-	ppmil_freq = raw_freq / 579.162 # total freq in gigaword sample unfiltered is 579,162,126
+	ppmil_freq = raw_freq / 242.88 # total freq in tagalog dataset received is 242,880,742
 	return round(ppmil_freq, 3)
 
 def mapSearchModeToColumn(smode):
