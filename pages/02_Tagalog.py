@@ -125,7 +125,7 @@ def runSubmit():
 		#	pos_choices = df_lex['pos'].unique().tolist()
 		
 
-		st.write('keyword(s) = ' + input_wrd)
+		#st.write('keyword(s) = ' + input_wrd)
 		#st.write('search_by_value = ' + search_col_name)
 		#st.write('POS selection:', pos_choices)
 		#input_wrd = input_list[0]
@@ -135,6 +135,7 @@ def runSubmit():
 		# Step 2: run the search query
 		resultsDict = {}
 		for item in input_list:
+			st.write('an item:::::' + item) 
 			item_results_df = getResults(item, search_col_name, [], exact_match)
 			if len(item_results_df.index) != 0:
 				resultsDict[item] = item_results_df
