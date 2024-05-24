@@ -221,7 +221,7 @@ with expander_:
 		#	)
 		
 	with col3:
-		st.write("**PPM** Frequency")
+		st.write("Frequency **Parts Per Million**")
 		freq_min = st.number_input(label='MINIMUM',min_value=df_lex['wordfreq'].min(),max_value=df_lex['wordfreq'].max(),value=df_lex['wordfreq'].min())
 		freq_max = st.number_input(label='MAXIMUM',min_value=df_lex['wordfreq'].min(),max_value=df_lex['wordfreq'].max(),value=df_lex['wordfreq'].max())
 
