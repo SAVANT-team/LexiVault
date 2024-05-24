@@ -51,7 +51,7 @@ def ppMillion(text):
 def mapSearchModeToColumn(smode):
 	#st.write('Inside map func with mode=' + smode)
 	col_name = 'word'
-	options_lst = ['Orthographic Form (e.g. yaktub)','Lemma (e.g. katab)','Stem (e.g. ktub)','Root (e.g. k.t.b)','Pattern (e.g. ya12u3)']
+	options_lst = ['Orthographic Form (e.g. AlkitAbap)','Lemma (e.g. kitAbap)','Stem (e.g. kitAb)','Root (e.g. k.t.b)','Pattern (e.g. fiEAlap)'] #['Orthographic Form (e.g. yaktub)','Lemma (e.g. katab)','Stem (e.g. ktub)','Root (e.g. k.t.b)','Pattern (e.g. ya12u3)']
 	colname_lst = ['word','lemma','stem','root','pattern']
 	for i in range(0,len(options_lst)):
 		if smode.strip() == options_lst[i].strip():
@@ -190,8 +190,10 @@ with st.expander(label="**ABOUT: Modern Standard Arabic Lexicon**", expanded=Tru
 		🔠  **word_ar** **:blue[=]** the wordform  
 		🔢  **freq_word** **:blue[=]** ppm frequency of the wordform  
 		🔠  **lemma** **:blue[=]** the lemma, in Buckwalter transliteration  
-		🔠  **lemma_ar** **:blue[=]** the lemma  
+		🔠  **lemma_ar** **:blue[=]** the lemma
 		🔢  **freq_lem** **:blue[=]** ppm frequency of the lemma  
+		🔠  **stem** **:blue[=]** the stem, in Buckwalter transliteration  
+		🔠  **stem_ar** **:blue[=]** the stem
 		🔠  **pos** **:blue[=]** Part of Speech  
 		🔠  **gloss** **:blue[=]** English gloss  
 		🔠  **root** **:blue[=]** the root, in Buckwalter transliteration  
@@ -199,7 +201,6 @@ with st.expander(label="**ABOUT: Modern Standard Arabic Lexicon**", expanded=Tru
 		🔢  **freq_root** **:blue[=]** ppm frequency of the root  
 		🔠  **pattern** **:blue[=]** the pattern, in Buckwalter transliteration  
 		🔠  **pattern_ar** **:blue[=]** the pattern  
-		🔢  **freq_ptrn** **:blue[=]** ppm frequency of the pattern  
 		"""
 		)
 
@@ -219,8 +220,8 @@ with expander_:
 		input_f = st.file_uploader(label='Upload SearchKey File (one per line)',key='input_file_msa',help='multiple entry search',accept_multiple_files=False, type=['.txt','.csv'])
 		#file_ = st.file_uploader(label='',key='input_file',accept_multiple_files=False, type=['.xlsx','.xls','.csv','.txt'])
 	with col2:
+		searchMode = st.selectbox(label='Search By',options=['Orthographic Form (e.g. AlkitAbap)','Lemma (e.g. kitAbap)','Stem (e.g. kitAb)','Root (e.g. k.t.b)','Pattern (e.g. fiEAlap)'])
 		strictSearch = st.checkbox(label='Only show _**EXACT**_ matches', value=False, key='strict_search',help='check the box for an exact keyword match, leave it unchecked for any results close to your keyword')
-		searchMode = st.selectbox(label='Search By',options=['Orthographic Form (e.g. yaktub)','Lemma (e.g. katab)','Stem (e.g. ktub)','Root (e.g. k.t.b)','Pattern (e.g. ya12u3)'])
 		pos_ = st.multiselect(
 			label='Filter by Part-of-Speech (POS):',
 			key='pos_lst',
