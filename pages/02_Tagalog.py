@@ -135,7 +135,7 @@ def runSubmit():
 		# Step 2: run the search query
 		resultsDict = {}
 		for item in input_list:
-			st.write('an item:::::' + item) 
+			#st.write('an item:::::' + item) 
 			item_results_df = getResults(item, search_col_name, [], exact_match)
 			if len(item_results_df.index) != 0:
 				resultsDict[item] = item_results_df
