@@ -65,7 +65,7 @@ def mapSearchModeToColumn(smode):
 # ==================================================================
 @st.cache_data(experimental_allow_widgets=True)
 def load_lexicon():
-	fpath = os.path.join(os.path.join(os.getcwd(),'lexivault_db'),'msa_1K_streamlit.csv') # MSA_formatted.csv
+	fpath = os.path.join(os.path.join(os.getcwd(),'lexivault_db'),'msa_streamlit.csv') # msa_1K_streamlit.csv or MSA_formatted.csv
 	dflx = pd.read_csv(fpath,sep='\t',encoding='utf-8',low_memory=False)
 	dflx['lemma'] = dflx['lemma'].map(cleanLemmas)
 	dflx['lemma_ar'] = dflx['lemma_ar'].map(cleanLemmas)
