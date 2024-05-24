@@ -62,7 +62,9 @@ def mapSearchModeToColumn(smode):
 def load_lexicon():
 	fpath = os.path.join(os.path.join(os.getcwd(),'lexivault_db'),'tagalog_sample.csv')
 	dflx = pd.read_csv(fpath,sep='\t',encoding='utf-8',low_memory=False)
-	dflx = dflx.fillna('')
+	#dflx = dflx.fillna('')
+	dflx['wordfreq'] = dflx['wordfreq'].map(ppMillion)
+	dflx['stemfreq'] = dflx['stemfreq'].map(ppMillion)
 	#return dflx.drop(columns=temp_drop_cols)
 	return dflx
 
@@ -185,9 +187,9 @@ with st.expander(label="**ABOUT: Tagalog Lexicon**", expanded=True):
       		📚  Wikipedia (Wray 2022)  
       		Search Parameters:  
       		🔠  **word** **:blue[=]** the wordform  
-		🔢  **wordfreq** **:blue[=]** raw frequency of the wordform  
+		🔢  **wordfreq** **:blue[=]** ppm frequency of the wordform  
   		🔠  **stem** **:blue[=]** the stem, extracted by in-house rule-based stemmer  
-    		🔢  **stemfreq** **:blue[=]** raw frequency of the stem  
+    		🔢  **stemfreq** **:blue[=]** ppm frequency of the stem  
       		🔢  **TP** **:blue[=]** whole word transition probability
 		"""
 		)
@@ -219,7 +221,7 @@ with expander_:
 		#	)
 		
 	with col3:
-		st.write("Frequency")
+		st.write("**PPM** Frequency")
 		freq_min = st.number_input(label='MINIMUM',min_value=df_lex['wordfreq'].min(),max_value=df_lex['wordfreq'].max(),value=df_lex['wordfreq'].min())
 		freq_max = st.number_input(label='MAXIMUM',min_value=df_lex['wordfreq'].min(),max_value=df_lex['wordfreq'].max(),value=df_lex['wordfreq'].max())
 
