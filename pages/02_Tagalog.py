@@ -97,7 +97,7 @@ def getResults(keyword, searchmode, postags, exactMatch):
 		results = df_lex.query("{0} == @keyword_ & pos == @pos_filter".format(searchCol))
 	else:
 		#results = df_lex.query("{0}.str.contains(@keyword_,na=False)".format(searchCol))
-		results = df_lex.query("{0}.str.contains(@keyword_,na=False) & pos == @pos_filter".format(searchCol))
+		results = df_lex.query("{0}.str.contains(@keyword_) & pos == @pos_filter".format(searchCol))
 
 	return results #pd.DataFrame()
 
