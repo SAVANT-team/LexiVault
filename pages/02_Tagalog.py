@@ -60,7 +60,7 @@ def mapSearchModeToColumn(smode):
 # ==================================================================
 @st.cache_data(experimental_allow_widgets=True)
 def load_lexicon():
-	fpath = os.path.join(os.path.join(os.getcwd(),'lexivault_db'),'tagalog_sample_950.csv')
+	fpath = os.path.join(os.path.join(os.getcwd(),'lexivault_db'),'tagalog_sample_1K.csv')
 	dflx = pd.read_csv(fpath,sep='\t',encoding='utf-8',low_memory=False)
 	#dflx = dflx.fillna('')
 	dflx['wordfreq'] = dflx['wordfreq'].map(ppMillion)
