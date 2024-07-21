@@ -172,7 +172,7 @@ def runSubmit():
 				gridOptions=gridoptions,
 				fit_columns_on_grid_load=True,
 				update_mode=GridUpdateMode.SELECTION_CHANGED,
-				theme='fresh')
+				theme='streamlit')
 
 
 # ===========================================================
