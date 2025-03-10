@@ -37,12 +37,6 @@ def ARtoBW(text):
 	as_bw = ar2bw(text)
 	return as_bw
 
-def BWtoAR(text):
-	bw2ar = CharMapper.builtin_mapper('bw2ar')
-	as_ar = bw2ar(text)
-	return as_ar
-
-
 def cleanLemmas(lem):
 	if lem[-2] == '_' or lem[-2] == 'ـ':
 		return lem[:len(lem)-2]
@@ -75,7 +69,6 @@ def load_lexicon():
 	dflx = pd.read_csv(fpath,sep='\t',encoding='utf-8',low_memory=False)
 	dflx['lemma'] = dflx['lemma'].map(cleanLemmas)
 	dflx['lemma_ar'] = dflx['lemma_ar'].map(cleanLemmas)
-	dflx['pattern_ar'] = dflx['pattern_ar'].map(BWtoAR)
 	dflx['freq_word'] = dflx['freq_word'].map(ppMillion)
 	dflx['freq_lem'] = dflx['freq_lem'].map(ppMillion)
 	dflx['freq_root'] = dflx['freq_root'].map(ppMillion)
