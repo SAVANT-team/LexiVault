@@ -79,7 +79,7 @@ def load_lexicon():
 
 df_lex = load_lexicon()
 st.markdown('---')
-st.write(list(df_lx.columns.values))
+st.write(list(df_lex.columns.values))
 st.markdown('---')
 
 # ===========================================================
