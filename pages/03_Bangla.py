@@ -153,7 +153,14 @@ def runSubmit():
 				resultsDict[item].insert(0,'SearchKey',item)
 				concat_dfs.append(resultsDict[item])
 
-			masterResultsDF = pd.concat(concat_dfs)
+			preFilterResultsDF = pd.concat(concat_dfs)
+			
+			# drop columns user filtered out for results display
+			if len(col_filter) > 0:
+				final_filter = ['SearchKey']+col_filter
+				masterResultsDF = preFilterResultsDF[final_filter]
+			else:
+				masterResultsDF = preFilterResultsDF
 
 			st.markdown('---')
 			timestampStr = datetime.now().strftime("%Y%m%d_%H%M%S")
