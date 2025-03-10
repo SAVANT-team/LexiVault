@@ -159,7 +159,8 @@ def runSubmit():
 			
 			# drop columns user filtered out for results display
 			if len(col_filter) > 0:
-				masterResultsDF = preFilterResultsDF[col_filter.insert(0,'Keyword')]
+				final_filter = ['Keyword'].extend(col_filter)
+				masterResultsDF = preFilterResultsDF[final_filter]
 			else:
 				masterResultsDF = preFilterResultsDF
 
