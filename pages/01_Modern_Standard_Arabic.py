@@ -165,6 +165,8 @@ def runSubmit():
 				masterResultsDF = preFilterResultsDF
 
 			st.markdown('---')
+			st.write(list(df_lx.columns.values))
+			st.markdown('---')
 			timestampStr = datetime.now().strftime("%Y%m%d_%H%M%S")
 			fname='lexivault_msa_'+timestampStr+'.csv'
 			st.download_button('Export as .csv', masterResultsDF.to_csv(index=False).encode('utf-8'),file_name=fname,key='download_csv')
