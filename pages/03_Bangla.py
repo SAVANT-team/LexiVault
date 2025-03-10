@@ -157,7 +157,7 @@ def runSubmit():
 
 			st.markdown('---')
 			timestampStr = datetime.now().strftime("%Y%m%d_%H%M%S")
-			fname='lexivault_tagalog_'+timestampStr+'.csv'
+			fname='lexivault_bangla_'+timestampStr+'.csv'
 			st.download_button('Export as .csv', masterResultsDF.to_csv(index=False).encode('utf-8'),file_name=fname,key='download_csv')
 
 			gd = GridOptionsBuilder.from_dataframe(masterResultsDF)
@@ -179,7 +179,7 @@ def runSubmit():
 # INTERFACE : SEARCH FORM
 # ===========================================================
 
-with st.expander(label="**ABOUT: Tagalog Lexicon**", expanded=True):
+with st.expander(label="**ABOUT: Bangla Lexicon**", expanded=True):
 	st.markdown(
 		"""
   		This lexicon was constructed from a 257M word corpus consisting of the following:  
@@ -196,7 +196,7 @@ with st.expander(label="**ABOUT: Tagalog Lexicon**", expanded=True):
 
 if 'is_expanded' not in st.session_state:
 	st.session_state['is_expanded'] = True
-expander_ = st.expander(label="**Tagalog: Search & Filter**", expanded=st.session_state['is_expanded'])
+expander_ = st.expander(label="**Bangla: Search & Filter**", expanded=st.session_state['is_expanded'])
 
 with expander_:
 	formContainer = st.container()
