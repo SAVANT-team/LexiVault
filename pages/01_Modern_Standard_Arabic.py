@@ -78,9 +78,9 @@ def load_lexicon():
 	return dflx
 
 df_lex = load_lexicon()
-st.markdown('---')
-st.write(list(df_lex.columns.values))
-st.markdown('---')
+#st.markdown('---')
+#st.write(list(df_lex.columns.values))
+#st.markdown('---')
 
 # ===========================================================
 # FUNCTIONALITY
