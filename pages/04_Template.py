@@ -169,7 +169,7 @@ def runSubmit():
 			st.markdown('---')
 			st.write(type(col_filter))
 			st.markdown('---')
-			final_filter = ['Keyword'].extend(col_filter)
+			final_filter = ['Keyword']+ col_filter
 			st.write(final_filter)
 			st.markdown('---')
 			timestampStr = datetime.now().strftime("%Y%m%d_%H%M%S")
