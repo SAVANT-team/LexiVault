@@ -158,12 +158,14 @@ def runSubmit():
 			preFilterResultsDF = pd.concat(concat_dfs)
 			
 			# drop columns user filtered out for results display
-			if len(col_filter) > 0:
-				final_filter = ['Keyword'].extend(col_filter)
-				masterResultsDF = preFilterResultsDF[final_filter]
-			else:
-				masterResultsDF = preFilterResultsDF
-
+			#if len(col_filter) > 0:
+			#	final_filter = ['Keyword'].extend(col_filter)
+			#	masterResultsDF = preFilterResultsDF[final_filter]
+			#else:
+			#	masterResultsDF = preFilterResultsDF
+			masterResultsDF = preFilterResultsDF
+			st.markdown('---')
+			st.write(col_filter)
 			st.markdown('---')
 			timestampStr = datetime.now().strftime("%Y%m%d_%H%M%S")
 			fname='lexivault_template_'+timestampStr+'.csv'
