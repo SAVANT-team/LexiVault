@@ -169,6 +169,9 @@ def runSubmit():
 			st.markdown('---')
 			st.write(type(col_filter))
 			st.markdown('---')
+			final_filter = ['Keyword'].extend(col_filter)
+			st.write(final_filter)
+			st.markdown('---')
 			timestampStr = datetime.now().strftime("%Y%m%d_%H%M%S")
 			fname='lexivault_template_'+timestampStr+'.csv'
 			st.download_button('Export as .csv', masterResultsDF.to_csv(index=False).encode('utf-8'),file_name=fname,key='download_csv')
