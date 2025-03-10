@@ -183,7 +183,8 @@ with st.expander(label="**ABOUT: Bangla Lexicon**", expanded=True):
 	st.markdown(
 		"""
   		This lexicon is under construction, procedding a 570M word corpus (possibly reduced after further processing) consisting of the following:  
-    		📚  Bengali TenTen Web & Wikipedia Corpus 2021 Ed. (Jakubíček et al., 2013; Suchomel, 2020)
+    		
+      		📚  Bengali TenTen Web & Wikipedia Corpus 2021 Ed. (Jakubíček et al., 2013; Suchomel, 2020)
       		📚  Wikipedia & News (Kunchukuttan et al., 2020)
       		Search Parameters:  
       		🔠  **word** **:blue[=]** the wordform  
