@@ -40,14 +40,14 @@ def cleanLemmas(text):
 
 def ppMillion(text):
 	raw_freq = float(text)
-	ppmil_freq = raw_freq / 242.88 # total freq in tagalog dataset received is 242,880,742
+	ppmil_freq = raw_freq / 470.73 # total freq bnTenTen21 is 470,732,738 words https://www.sketchengine.eu/bntenten-bengali-corpus/#toggle-id-1
 	return round(ppmil_freq, 3)
 
 def mapSearchModeToColumn(smode):
 	#st.write('Inside map func with mode=' + smode)
 	col_name = 'word'
-	options_lst = ['Word (e.g. ihahalo)','Stem (e.g. halo)']
-	colname_lst = ['word','stem']
+	options_lst = ['Word (e.g. ihahalo)','Lemma (e.g. halo)']
+	colname_lst = ['word','lemma']
 	for i in range(0,len(options_lst)):
 		if smode.strip() == options_lst[i].strip():
 			col_name = colname_lst[i]
@@ -60,11 +60,11 @@ def mapSearchModeToColumn(smode):
 # ==================================================================
 @st.cache_data(experimental_allow_widgets=True)
 def load_lexicon():
-	fpath = os.path.join(os.path.join(os.getcwd(),'lexivault_db'),'tagalog_sample_1K.csv')
+	fpath = os.path.join(os.path.join(os.getcwd(),'lexivault_db'),'bangla_streamlit.csv')
 	dflx = pd.read_csv(fpath,sep='\t',encoding='utf-8',low_memory=False)
 	#dflx = dflx.fillna('')
 	dflx['wordfreq'] = dflx['wordfreq'].map(ppMillion)
-	dflx['stemfreq'] = dflx['stemfreq'].map(ppMillion)
+	#dflx['stemfreq'] = dflx['stemfreq'].map(ppMillion)
 	#return dflx.drop(columns=temp_drop_cols)
 	return dflx
 
@@ -104,18 +104,18 @@ def getResults(keyword, searchmode, postags, exactMatch):
 	return results #pd.DataFrame()
 
 def runSubmit():
-	if st.session_state['input_word_tagalog'] is None and st.session_state['input_file_tagalog'] is None:
+	if st.session_state['input_word_bangla'] is None and st.session_state['input_file_bangla'] is None:
 		st.warning('Please enter a keyword or upload a file to search')
 	else:
 		# ##################
 		# Step 1: get the input
 		# if there's a file - use that, otherwise default to the text area
 		input_list = [] # this can be one item from the text area or many from the file
-		if not(st.session_state['input_file_tagalog'] is None):
+		if not(st.session_state['input_file_bangla'] is None):
 			dfinput=pd.read_csv(input_f, sep=" ", header=None)
 			input_list.extend(dfinput[dfinput.columns[0]].values.tolist())
 		else:
-			tokenized = str(st.session_state['input_word_tagalog']).strip().split()
+			tokenized = str(st.session_state['input_word_bangla']).strip().split()
 			input_list.extend(tokenized)
 
 		input_wrd = '\t|\t'.join(input_list)
@@ -182,15 +182,14 @@ def runSubmit():
 with st.expander(label="**ABOUT: Bangla Lexicon**", expanded=True):
 	st.markdown(
 		"""
-  		This lexicon was constructed from a 257M word corpus consisting of the following:  
-    		📚  Web & Newswire (Zuraw, 2007; Cruz & Cheng, 2021)  
-      		📚  Wikipedia (Wray 2022)  
+  		This lexicon is under construction, procedding a 570M word corpus (possibly reduced after further processing) consisting of the following:  
+    		📚  Bengali TenTen Web & Wikipedia Corpus 2021 Ed. (Jakubíček et al., 2013; Suchomel, 2020)
+      		📚  Wikipedia & News (Kunchukuttan et al., 2020)
       		Search Parameters:  
       		🔠  **word** **:blue[=]** the wordform  
 		🔢  **wordfreq** **:blue[=]** ppm frequency of the wordform  
-  		🔠  **stem** **:blue[=]** the stem, extracted by in-house rule-based stemmer  
-    		🔢  **stemfreq** **:blue[=]** ppm frequency of the stem  
-      		🔢  **TP** **:blue[=]** whole word transition probability
+  		🔠  **lemma** **:blue[=]** the lemma  
+      		🔠  **pos** **:blue[=]** the part-of-speech
 		"""
 		)
 
@@ -204,11 +203,11 @@ with expander_:
 	col1, col2, col3, col4 = formContainer.columns((2,1,1,2))
 
 	with col1:
-		input_ = st.text_input(label = 'Input SearchKey', key='input_word_tagalog', help='single entry search',placeholder='search')
-		input_f = st.file_uploader(label='Upload SearchKey File (one per line)',key='input_file_tagalog',help='multiple entry search',accept_multiple_files=False, type=['.txt','.csv'])
+		input_ = st.text_input(label = 'Input SearchKey', key='input_word_bangla', help='single entry search',placeholder='কর')
+		input_f = st.file_uploader(label='Upload SearchKey File (one per line)',key='input_file_bangla',help='multiple entry search',accept_multiple_files=False, type=['.txt','.csv'])
 		#file_ = st.file_uploader(label='',key='input_file',accept_multiple_files=False, type=['.xlsx','.xls','.csv','.txt'])
 	with col2:
-		searchMode = st.selectbox(label='Search By',options=['Word (e.g. ihahalo)','Stem (e.g. halo)'])
+		searchMode = st.selectbox(label='Search By',options=['Word (e.g. ihahalo)','Lemma (e.g. halo)'])
 		strictSearch = st.checkbox(label='Only show _**EXACT**_ matches', value=False, key='strict_search',help='check the box for an exact keyword match, leave it unchecked for any results close to your keyword')
 		
 		
