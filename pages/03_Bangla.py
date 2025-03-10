@@ -46,7 +46,7 @@ def ppMillion(text):
 def mapSearchModeToColumn(smode):
 	#st.write('Inside map func with mode=' + smode)
 	col_name = 'word'
-	options_lst = ['Word (e.g. ihahalo)','Lemma (e.g. halo)']
+	options_lst = ['Word','Lemma']
 	colname_lst = ['word','lemma']
 	for i in range(0,len(options_lst)):
 		if smode.strip() == options_lst[i].strip():
@@ -183,14 +183,13 @@ with st.expander(label="**ABOUT: Bangla Lexicon**", expanded=True):
 	st.markdown(
 		"""
   		This lexicon is under construction, procedding a 570M word corpus (possibly reduced after further processing) consisting of the following:  
-    		
-      		📚  Bengali TenTen Web & Wikipedia Corpus 2021 Ed. (Jakubíček et al., 2013; Suchomel, 2020)
-      		📚  Wikipedia & News (Kunchukuttan et al., 2020)
+      		📚  Bengali TenTen Web & Wikipedia Corpus 2021 Ed. (Jakubíček et al., 2013; Suchomel, 2020)  
+      		📚  Wikipedia & News (Kunchukuttan et al., 2020)  
       		Search Parameters:  
       		🔠  **word** **:blue[=]** the wordform  
-		🔢  **wordfreq** **:blue[=]** ppm frequency of the wordform  
-  		🔠  **lemma** **:blue[=]** the lemma  
-      		🔠  **pos** **:blue[=]** the part-of-speech
+      		🔢  **wordfreq** **:blue[=]** ppm frequency of the wordform  
+      		🔠  **lemma** **:blue[=]** the lemma  
+      		🔠  **pos** **:blue[=]** the part-of-speech  
 		"""
 		)
 
@@ -204,11 +203,11 @@ with expander_:
 	col1, col2, col3, col4 = formContainer.columns((2,1,1,2))
 
 	with col1:
-		input_ = st.text_input(label = 'Input SearchKey', key='input_word_bangla', help='single entry search',placeholder='কর')
+		input_ = st.text_input(label = 'Input SearchKey', key='input_word_bangla', help='single entry search',placeholder='search')
 		input_f = st.file_uploader(label='Upload SearchKey File (one per line)',key='input_file_bangla',help='multiple entry search',accept_multiple_files=False, type=['.txt','.csv'])
 		#file_ = st.file_uploader(label='',key='input_file',accept_multiple_files=False, type=['.xlsx','.xls','.csv','.txt'])
 	with col2:
-		searchMode = st.selectbox(label='Search By',options=['Word (e.g. ihahalo)','Lemma (e.g. halo)'])
+		searchMode = st.selectbox(label='Search By',options=['Word','Lemma'])
 		strictSearch = st.checkbox(label='Only show _**EXACT**_ matches', value=False, key='strict_search',help='check the box for an exact keyword match, leave it unchecked for any results close to your keyword')
 		
 		
