@@ -24,7 +24,7 @@ st.header("Welcome to LexiVAULT! :book:")
 col1, col2 = st.columns([1,2], gap="small")
 
 with col1:
-	lexivault_logo = Image.open('img/lexivault-logo-edit.png')
+	lexivault_logo = Image.open('img/lexivault-logo_.png')
 	st.image(lexivault_logo, caption=None, width=360)
 
 with col2:
