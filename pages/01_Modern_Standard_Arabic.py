@@ -78,7 +78,9 @@ def load_lexicon():
 	return dflx
 
 df_lex = load_lexicon()
-
+st.markdown('---')
+st.write(list(df_lx.columns.values))
+st.markdown('---')
 
 # ===========================================================
 # FUNCTIONALITY
@@ -164,8 +166,6 @@ def runSubmit():
 			else:
 				masterResultsDF = preFilterResultsDF
 
-			st.markdown('---')
-			st.write(list(df_lx.columns.values))
 			st.markdown('---')
 			timestampStr = datetime.now().strftime("%Y%m%d_%H%M%S")
 			fname='lexivault_msa_'+timestampStr+'.csv'
