@@ -149,16 +149,19 @@ def runSubmit():
 		if len(resultsDict) == 0:
 			st.warning('No matches found!')
 		else:
-			# drop columns user filtered out for results display
-			if len(col_filter) > 0:
-				resultsDict = resultsDict[col_filter]
 			# build master DF with first column containing the search keywords and concatenate all in one table before displaying
 			concat_dfs = []
 			for item in resultsDict:
 				resultsDict[item].insert(0,'Keyword',item)
 				concat_dfs.append(resultsDict[item])
 
-			masterResultsDF = pd.concat(concat_dfs)
+			preFilterResultsDF = pd.concat(concat_dfs)
+			
+			# drop columns user filtered out for results display
+			if len(col_filter) > 0:
+				masterResultsDF = preFilterResultsDF[col_filter.insert(0,'Keyword')]
+			else:
+				masterResultsDF = preFilterResultsDF
 
 			st.markdown('---')
 			timestampStr = datetime.now().strftime("%Y%m%d_%H%M%S")
