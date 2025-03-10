@@ -73,8 +73,8 @@ def load_lexicon():
 	dflx['freq_lem'] = dflx['freq_lem'].map(ppMillion)
 	dflx['freq_root'] = dflx['freq_root'].map(ppMillion)
 	#dflx['freq_ptrn'] = dflx['freq_ptrn'].map(ppMillion)
-	#temp_drop_cols = ['lex.ar','diac.ar', 'stem.ar','root.ar','pattern.ar']
-	#return dflx.drop(columns=temp_drop_cols)
+	temp_drop_cols = ['root_ar','pattern_ar']
+	return dflx.drop(columns=temp_drop_cols)
 	return dflx
 
 df_lex = load_lexicon()
