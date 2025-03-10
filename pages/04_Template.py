@@ -167,7 +167,7 @@ def runSubmit():
 			st.markdown('---')
 			st.write(col_filter)
 			st.markdown('---')
-			st.write(str(col_filter.type()))
+			st.write(type(col_filter))
 			st.markdown('---')
 			timestampStr = datetime.now().strftime("%Y%m%d_%H%M%S")
 			fname='lexivault_template_'+timestampStr+'.csv'
