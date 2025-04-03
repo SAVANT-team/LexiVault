@@ -21,7 +21,7 @@ st.markdown(
 
 st.header("Welcome to LexiVAULT! :book:")
 
-col1, col2 = st.columns(2)
+col3, col4 = st.columns([1,4], gap="small")
 
 with col1:
 	
@@ -44,6 +44,7 @@ with col2:
 st.write("---")
 
 col3, col4 = st.columns([1,4], gap="small")
+
 with col3:
 	savant_logo = Image.open('savant-logo.png')
 	st.image(savant_logo, caption=None, width=240)

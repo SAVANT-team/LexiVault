@@ -21,7 +21,7 @@ st.markdown(
 
 st.header("Welcome to LexiVAULT! :book:")
 
-col1, col2 = st.columns([1,2], gap="medium")
+col1, col2 = st.columns([1,4], gap="small")
 
 with col1:
 	lexivault_logo = Image.open('img/lexivaultlogo.png')
