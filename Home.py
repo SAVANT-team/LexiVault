@@ -21,7 +21,7 @@ st.markdown(
 
 st.header("Welcome to LexiVAULT! :book:")
 
-col1, col2 = st.columns([1,4], gap="small")
+col1, col2 = st.columns([1,3], gap="medium")
 
 with col1:
 	lexivault_logo = Image.open('img/lexivaultlogo.png')
@@ -34,10 +34,10 @@ with col2:
 
 st.write("---")
 
-col3, col4 = st.columns([1,4], gap="small")
+col3, col4 = st.columns([1,3], gap="medium")
 with col3:
 	savant_logo = Image.open('img/savant-logo.png')
-	st.image(savant_logo, caption=None, width=200)
+	st.image(savant_logo, caption=None, width=360)
 
 with col4:
 	st.markdown("The development of this tool falls within a wider research context studying the **S**ystematicity **a**nd **V**ariation in Word Structure Processing Across Languages through **a** **N**euro-**T**ypology Approach, a.k.a. The [SAVANT](https://savant.qmul.ac.uk/) Project.")
