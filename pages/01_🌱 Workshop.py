@@ -1,4 +1,11 @@
+import sys
+import csv
 import streamlit as st
+from pathlib import Path
+
+# import functions
+sys.path.append(str(Path(__file__).resolve().parents[1]))
+from function_lib import *
 
 ### SET CONFIG
 st.set_page_config(page_title="Workshop", page_icon=":seedling:", layout="wide")
@@ -22,13 +29,18 @@ with st.expander(label="**Instructions**", expanded=True):
 			Thank you for contributing to LexiVAULT! Please make sure your keyword file meets the following requirements 🌟:
 		"""
 	)
-    st.checkbox("Contains at least **16 million words**, in line with [Brysbaert & New (2009)](https://pubmed.ncbi.nlm.nih.gov/19897807/)")
-    st.checkbox("Is either a **.csv or .xlsx** file with words listed in the first column, or a **.txt** raw text corpus")
+    st.checkbox("Is either a **.csv or .xlsx** file with words listed in the first column, or a **.txt** raw text corpus "
+    "(It is recommended but not required that your corpus contains at least **16 million words**, in line with [Brysbaert & New (2009)](https://pubmed.ncbi.nlm.nih.gov/19897807/)).")
     st.markdown(
         """
 			Post processing, you will have a searchable corpus with the following features: TODO
 		"""
 	)
+
+### variables for storing data from uplaoded file
+data = None
+text = ""
+output_dir = Path(__file__).resolve().parents[1] / "temp_db"
 
 ### process corpus
 # set up state tracking for which step you are on
@@ -58,58 +70,75 @@ with st.expander(label="**🚀 Processing Wizard**", expanded=True):
 			"""
 		)
         data = st.file_uploader("Choose a file:", type=["txt", "csv", "xlsx"])
+
+        if data is not None:
+            # read & decode .txt file
+            if data.name.endswith(".txt"):
+                text = data.read().decode("utf-8")
+
+                ## get relevant metrics
+                wordfreq = word_frequency(text)
+                output_path = output_dir / f"temp_{data.name.replace('.txt','')}.csv"
+
+                ## write to csv file
+                with open(output_path, mode="w", newline="", encoding="utf-8") as file:
+                    writer = csv.writer(file, delimiter="\t")
+                    writer.writerow(["word", "wordfreq"])
+                    for word, count in wordfreq.items():
+                        writer.writerow([word, count])
+
+
+    # ### STEP 2: text processing
+    # if st.session_state.step == 2:
+    #     st.markdown(
+    #         """
+	# 			### Step 2: Text processing
+	# 		"""
+	# 	)
+    #     st.markdown(
+    #         """
+    #     		Unfortunately the back & next buttons are somewhat finicky, so please double-check before you move on—you may not be able to go back.  
+	# 		"""
+	# 	)
         
-    ### STEP 2: text processing
-    if st.session_state.step == 2:
-        st.markdown(
-            """
-				### Step 2: Text processing
-			"""
-		)
-        st.markdown(
-            """
-        		Unfortunately the back & next buttons are somewhat finicky, so please double-check before you move on—you may not be able to go back.  
-			"""
-		)
+    # ### STEP 3: speech data processing
+    # if st.session_state.step == 3:
+    #     st.markdown(
+    #         """
+	# 			### Step 3: Speech data processing 
+	# 		"""
+	# 	)
+    #     st.markdown(
+    #         """
+    #     		Unfortunately the back & next buttons are somewhat finicky, so please double-check before you move on—you may not be able to go back.  
+	# 		"""
+	# 	)
         
-    ### STEP 3: speech data processing
-    if st.session_state.step == 3:
-        st.markdown(
-            """
-				### Step 3: Speech data processing 
-			"""
-		)
-        st.markdown(
-            """
-        		Unfortunately the back & next buttons are somewhat finicky, so please double-check before you move on—you may not be able to go back.  
-			"""
-		)
+    # ### STEP 4: behavioural data processing
+    # if st.session_state.step == 4:
+    #     st.markdown(
+    #         """
+	# 			### Step 4: Behavioral data processing
+	# 		"""
+	# 	)
+    #     st.markdown(
+    #         """
+    #     		Unfortunately the back & next buttons are somewhat finicky, so please double-check before you move on—you may not be able to go back.  
+	# 		"""
+	# 	)
         
-    ### STEP 4: behavioural data processing
-    if st.session_state.step == 4:
-        st.markdown(
-            """
-				### Step 4: Behavioral data processing
-			"""
-		)
-        st.markdown(
-            """
-        		Unfortunately the back & next buttons are somewhat finicky, so please double-check before you move on—you may not be able to go back.  
-			"""
-		)
-        
-    ### STEP 5: describe your corpus
-    if st.session_state.step == 5:
-        st.markdown(
-            """
-				### Step 5: Summary
-			"""
-		)
-        st.markdown(
-            """
-        		Unfortunately the back & next buttons are somewhat finicky, so please double-check before you move on—you may not be able to go back.  
-			"""
-		)
+    # ### STEP 5: describe your corpus
+    # if st.session_state.step == 5:
+    #     st.markdown(
+    #         """
+	# 			### Step 5: Summary
+	# 		"""
+	# 	)
+    #     st.markdown(
+    #         """
+    #     		Unfortunately the back & next buttons are somewhat finicky, so please double-check before you move on—you may not be able to go back.  
+	# 		"""
+	# 	)
     
 	### BUTTONS
     col1, col2, col3 = st.columns([1, 1, 3])
