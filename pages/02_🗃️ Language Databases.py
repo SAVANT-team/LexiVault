@@ -16,6 +16,6 @@ st.markdown(
 st.header(":card_file_box: Language Databases")
 st.markdown(
     """
-        This is a guide to using language databases in LexiVAULT.
+        This is a guide to using language databases in LexiVault.
     """
 )
