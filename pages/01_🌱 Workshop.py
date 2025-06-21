@@ -50,5 +50,7 @@ with st.expander(label="**🚀 Processing Wizard**", expanded=True):
     submit = st.button("Submit")
 
     if submit and data is not None:
-        processor = InputProcessor("123");
-        processor.process();
+        if data.type == "text/plain":
+            text = data.read().decode("utf-8")
+            processor = InputProcessor(text);
+            processor.process();
