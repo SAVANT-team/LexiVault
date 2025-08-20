@@ -1,7 +1,7 @@
 """
 function to take in input (corpus uploaded by user)
 """
-from function_lib import *
+from .func_lib import wordfreq
 
 class InputProcessor:
     def __init__(self, filepath, wordfreq=True):

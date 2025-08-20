@@ -4,7 +4,7 @@ from pathlib import Path
 
 # import functions
 sys.path.append(str(Path(__file__).resolve().parents[1]))
-from input_processing import InputProcessor
+from src.input_processing import InputProcessor
 
 ### SET CONFIG
 st.set_page_config(page_title="Workshop", page_icon=":seedling:", layout="wide")
