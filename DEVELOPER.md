@@ -1,4 +1,4 @@
-# LexiVault: Guide to devs
+# LexiVault: Guide for devs
 
 ## How it works
 ### Database creation:
@@ -10,8 +10,13 @@
 ## Directory structure
 ```
 /LexiVault
-├─src/              # main source code: functions for building & querying language databases
-├─pages/            # user-facing pages
-├─lexivault_db/     # source dbs for languages in pages
-├─temp_db/          # temporary storage for user-submitted corpuses
+├─Home.py                       # entry point: page to run
+├─src/                          # source code: functions for building & querying language databases
+│   ├── function_lib.py         # library of functions for extracting metrics
+│   ├── input_processing.py     # functions for processing user input
+├─pages/                        # user-facing pages
+├─lexivault_db/                 # source dbs for languages in pages
+├─temp_db/                      # temporary storage for user-submitted corpuses
+├─utils/
+├─img/
 ```
