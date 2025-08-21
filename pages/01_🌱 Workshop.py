@@ -21,7 +21,7 @@ st.markdown(
 ### ================================================
 ### INTERFACE / CONTENT
 ### ================================================
-st.header(":seedling: LexiVAULT Workshop: Add a new language database")
+st.header(":seedling: LexiVault Workshop: Add a new language database")
 with st.expander(label="**Instructions**", expanded=True):
     st.markdown(
         """
@@ -33,7 +33,7 @@ with st.expander(label="**Instructions**", expanded=True):
     "that your corpus contains at least **16 million words**).")
 
 ### variables for storing data from uploaded file
-output_dir = Path(__file__).resolve().parents[1] / "temp_db"
+output_dir = Path(__file__).resolve().parents[1] / "temp_db/in"
 
 with st.expander(label="**🚀 Processing Wizard**", expanded=True):
     st.markdown(
@@ -50,5 +50,21 @@ with st.expander(label="**🚀 Processing Wizard**", expanded=True):
     submit = st.button("Submit")
 
     if submit and data is not None:
-        processor = InputProcessor("123");
-        processor.process();
+        # for txt files
+        if data.name.endswith("txt"):
+            # output directory path + file path = save path
+            updated_filename = "temp_" + data.name
+            save_path = output_dir / updated_filename
+
+            # actually save file in that path
+            with open(save_path, "wb") as f:  # write bytes
+                f.write(data.getbuffer())
+            st.success(f"Text file saved to {save_path}")
+
+            # process
+            processor = InputProcessor(save_path)
+            processor.process()
+
+        # TODO files that are not txt files
+        else:
+            print("not a txt file")
