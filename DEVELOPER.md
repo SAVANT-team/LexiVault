@@ -17,6 +17,8 @@
 ├─pages/                        # user-facing pages
 ├─lexivault_db/                 # source dbs for languages in pages
 ├─temp_db/                      # temporary storage for user-submitted corpuses
+│   ├── in/                     # what the user uploads gets saved here
+│   ├── out/                    # outputs get saved here
 ├─utils/
 ├─img/
 ```
