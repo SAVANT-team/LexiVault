@@ -4,7 +4,7 @@ function to take in input (corpus uploaded by user)
 import csv
 from collections import Counter
 from pathlib import Path
-from .func_lib import wordfreq
+from .func_lib import wordfreq, morphemo
 
 class InputProcessor:
     def __init__(self, filepath, run_wordfreq=True, run_morph_decomp=True):
@@ -36,3 +36,6 @@ class InputProcessor:
                 writer.writerow(["word", "wordfreq"])
                 for word, count in wordfreq_counts.items():
                     writer.writerow([word, count])
+        
+        if self.run_morph_decomp:
+            morphemo()
