@@ -3,6 +3,7 @@ from collections import Counter
 from .morphemo import Morphemo, saveFile, splitCorpus, loadWordsInData
 import re
 import gdown
+import os
 import datetime
 
 def wordfreq(text):
@@ -12,21 +13,24 @@ def wordfreq(text):
 
 def morphemo():
     # TODO this is the sample; actually implement
-    # I will provide you with an example corpus
-
+    # example corpus id
     file_ids = [
         "1FJL8RBJintQ0_FZQjvN2gAaWpD8MzB5H",
         "1xZ7MZE5CQ-PeJx2LlVRI34ALicaKMFPw",
         "1PqPEFoqKlcVnpkIPNYXNP-4JrhhVpjc9"
     ]
 
+    # download to /temp/morphemo; make sure folder actually exists
+    download_dir = "./temp_db/morphemo"
+    os.makedirs(download_dir, exist_ok=True)
+    # download files
     for fid in file_ids:
         url = f"https://drive.google.com/uc?id={fid}"
-        gdown.download(url, output=None, quiet=False)
+        gdown.download(url, output=os.path.join(download_dir, ""), quiet=False)
 
-    corpusPath = 'bribri-conllu-20240314-corpus.txt'
-    goldstandardPath = 'bribri-conllu-goldstandard-corpus.txt'
-    untrainedCorpus = "bribri-unmarked-corpus.txt"
+    corpusPath = os.path.join(download_dir, 'bribri-conllu-20240314-corpus.txt')
+    goldstandardPath = os.path.join(download_dir, 'bribri-conllu-goldstandard-corpus.txt')
+    untrainedCorpus = os.path.join(download_dir, "bribri-unmarked-corpus.txt")
     numberRun = "01"
 
     # Split into train and test

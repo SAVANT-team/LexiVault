@@ -62,7 +62,10 @@ with st.expander(label="**🚀 Processing Wizard**", expanded=True):
             st.success(f"Text file saved to {save_path}")
 
             # process
-            processor = InputProcessor(save_path)
+            # parse desired attributes
+            doWordFreq: bool = "Word frequency" in options
+            doMorphDecomp: bool = "Morphological decomposition" in options
+            processor = InputProcessor(save_path, doWordFreq, doMorphDecomp)
             processor.process()
 
         # TODO files that are not txt files
