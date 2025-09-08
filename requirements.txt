@@ -1,8 +1,0 @@
-numpy==1.26.4
-pandas==1.5.3
-Pillow==10.4.0
-six==1.16.0
-numpy==1.26.4
-streamlit==1.22.0
-streamlit-aggrid==0.2.3.post2
-protobuf==3.20.*
