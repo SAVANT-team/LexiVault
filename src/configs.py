@@ -12,9 +12,10 @@ LANGUAGES = {
                 'Wikipedia & News (Kunchukuttan et al., 2020)'
             ]
         },
-        'parameters': [
-
-        ]
+        'parameters': {
+            'word': 0, 
+            'wordfreq': 0
+        }
     },
     'Modern Standard Arabic': {
         'filepath': '',
@@ -25,9 +26,10 @@ LANGUAGES = {
                 'Dunn & Adams (2020)'
             ]
         },
-        'parameters': [
-
-        ]
+        'parameters': {
+            'word': 'the wordform, in Buckwalter transliteration', 
+            'wordfreq': 0
+        }
     },
     'Tagalog': {
         'filepath': '',
@@ -39,8 +41,14 @@ LANGUAGES = {
                 'Wikipedia (Wray 2022)'   
             ]
         },
-        'parameters': [
-
-        ]
+        'parameters': {
+            'word': 0, 
+            'wordfreq': 0
+        }
     }
+}
+
+PARAMETERS = {
+    'word': 'the wordform',
+    'wordfreq': 'ppm frequency of the wordform'
 }
