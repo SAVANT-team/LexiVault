@@ -1,3 +1,5 @@
+__pycache__/
+
 # ignore virtual environments & temp scratch work directory
 venv/
 temp/
