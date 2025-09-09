@@ -2,7 +2,7 @@ import streamlit as st
 import sys
 from pathlib import Path
 
-# resolve project root
+# resolve file paths
 PROJ_ROOT = Path(__file__).resolve().parent.parent
 TEMP_DIR = Path('./temp')
 DB_DIR = Path('./db')
@@ -36,18 +36,18 @@ with st.expander(label='**🚀 Processing Wizard**', expanded=True):
     "that your corpus contains at least **16 million words**).")
     st.markdown(
         '''
-        Please upload your corpus and select which attributes you'd like to have in your language database.
+        Please upload your corpus and select which search parameters you'd like to have in your language database.
         '''
     )
-    nlp_attributes = st.multiselect(
-        'Attributes:',
+    nlp_parameters = st.multiselect(
+        'Parameters:',
         ['Word frequency', 'Morphological decomposition']
 	)
     corpus = st.file_uploader('Choose a file:', type=['txt', 'csv', 'xlsx'])
     submit = st.button('Submit')
     
 	# validate file submission; save & process
-    run_wordfreq: bool = 'Word frequency' in nlp_attributes
+    run_wordfreq: bool = 'Word frequency' in nlp_parameters
     processor = InputProcessor(run_wordfreq)
     filepath = ''
     if submit and corpus is not None:

@@ -15,6 +15,7 @@ streamlit run Home.py
 ├─pages/                    # pages in the sidebar
 ├─db/                       # language databases underlying the pages
 ├─src/                      # source code: functions for building & querying language databases
+│   ├─configs.py            # configs to define attributes for each language
 │   ├─func_lib/             # source code for NLP functions
 │   ├─InputProcessor.py     # class for generating csv file in db/ from user upload
 │   ├─OutputGenerator.py    # class for generating interface in page/ from csv file in /db
