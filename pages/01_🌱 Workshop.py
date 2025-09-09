@@ -5,6 +5,7 @@ from pathlib import Path
 # resolve project root
 PROJ_ROOT = Path(__file__).resolve().parent.parent
 TEMP_DIR = Path('./temp')
+DB_DIR = Path('./db')
 sys.path.append(str(PROJ_ROOT / 'src'))
 
 # import stuff we wrote
@@ -23,13 +24,21 @@ st.markdown(
 # =======================
 # Interface: Page content
 # =======================
-st.header('🗃️ Language Databases')
+st.header('🌱 Workshop')
 with st.expander(label='**🚀 Processing Wizard**', expanded=True):
     st.markdown(
         '''
-		Please upload your corpus and select which attributes you'd like to have in your language database.
+		Thank you for contributing to LexiVault! Before you start, please make sure that your corpus meets the following requirements:
 		'''
 	)
+    st.checkbox("Is either a **.csv or .xlsx** file with words listed in the first column, or a **.txt** raw text corpus "
+    "(in line with [Brysbaert & New (2009)](https://pubmed.ncbi.nlm.nih.gov/19897807/) it is recommended but not required "
+    "that your corpus contains at least **16 million words**).")
+    st.markdown(
+        '''
+        Please upload your corpus and select which attributes you'd like to have in your language database.
+        '''
+    )
     nlp_attributes = st.multiselect(
         'Attributes:',
         ['Word frequency', 'Morphological decomposition']
@@ -55,3 +64,6 @@ with st.expander(label='**🚀 Processing Wizard**', expanded=True):
             pass
         elif corpus.name.endswith('xlsx'):
             pass
+
+        # save final csv file to /db
+        #TODO
